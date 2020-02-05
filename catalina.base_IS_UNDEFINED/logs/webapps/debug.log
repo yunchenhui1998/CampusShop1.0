@@ -1,0 +1,8 @@
+2020-02-05 16:49:21.373[main]DEBUG com.xupt.o2o.dao.ShopDao.insertShop -==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,last_edit_time,enable_status,advice) VALUES (?,?,?,? ,?,?,?,?,?,?,?,?,?) 
+2020-02-05 16:50:35.609[main]DEBUG com.xupt.o2o.dao.ShopDao.insertShop -==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,last_edit_time,enable_status,advice) VALUES (?,?,?,? ,?,?,?,?,?,?,?,?,?) 
+2020-02-05 16:52:05.165[main]DEBUG com.xupt.o2o.dao.ShopDao.insertShop -==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,last_edit_time,enable_status,advice) VALUES (?,?,?,? ,?,?,?,?,?,?,?,?,?) 
+2020-02-05 16:52:05.207[main]DEBUG com.xupt.o2o.dao.ShopDao.insertShop -==> Parameters: 1(Long), 2(Integer), 1(Long), 测试的店铺(String), test(String), test(String), test(String), test(String), 1(Integer), 2020-02-05 16:52:04.248(Timestamp), 2020-02-05 16:52:04.248(Timestamp), 1(Integer), 审核中(String)
+2020-02-05 16:52:05.214[main]DEBUG com.xupt.o2o.dao.ShopDao.insertShop -<==    Updates: 1
+2020-02-05 17:11:51.361[main]DEBUG com.xupt.o2o.dao.ShopDao.updateShop -==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? where shop_id=? 
+2020-02-05 17:11:51.396[main]DEBUG com.xupt.o2o.dao.ShopDao.updateShop -==> Parameters: 测试描述(String), 测试地址(String), 2020-02-05 17:11:50.328(Timestamp), 1(Long)
+2020-02-05 17:11:51.406[main]DEBUG com.xupt.o2o.dao.ShopDao.updateShop -<==    Updates: 1
