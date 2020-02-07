@@ -1,0 +1,7 @@
+2020-02-07 20:13:35.626[main]ERROR com.xupt.o2o.util.ImgUtil -javax.imageio.IIOException: Can't read input file!
+2020-02-07 20:26:33.085[main]ERROR com.xupt.o2o.util.ImgUtil -javax.imageio.IIOException: Can't read input file!
+2020-02-07 20:28:28.717[main]ERROR com.xupt.o2o.util.ImgUtil -javax.imageio.IIOException: Can't read input file!
+2020-02-07 20:29:21.584[main]ERROR com.xupt.o2o.util.ImgUtil -javax.imageio.IIOException: Can't read input file!
+2020-02-07 20:36:47.112[main]ERROR com.xupt.o2o.util.ImgUtil -javax.imageio.IIOException: Can't read input file!
+2020-02-07 20:43:54.074[main]ERROR com.xupt.o2o.util.ImgUtil -javax.imageio.IIOException: Can't read input file!
+2020-02-07 20:47:43.893[main]ERROR com.xupt.o2o.util.ImgUtil -java.io.FileNotFoundException: E:\projectdev\image\upload\item\shop\1\2020020720474342847.jpg (系统找不到指定的路径。)

@@ -60,7 +60,7 @@ public class ImgUtil {
         logger.debug("current complete addr is:"+ PathUtil.getImgBasePath()+relativeAddr);
         try{
             Thumbnails.of(thumbnail).size(200,200)
-                    .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath+"/watermark.jpg")),0.25f)
+                    .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File("E:\\JAVA\\o2o\\src\\test\\resources\\watermark.jpg")),0.25f)
                     .outputQuality(0.8f).toFile(dest);
         }catch (IOException e){
             logger.error(e.toString());

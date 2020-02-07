@@ -8,20 +8,15 @@ package com.xupt.o2o.util;
  * @Version 1.0
  **/
 public class PathUtil {
-    private static String separator=System.getProperty("file.separator");
+    private static String seperator="/";
     public static String getImgBasePath(){
-        String os=System.getProperty("os.name");
         String basePath="";
-        if(os.toLowerCase().startsWith("win")){
-            basePath="E:/projectdev/image/";
-        }else{
-            basePath="/home/ych/image/";
-        }
-        basePath=basePath.replace("/",separator);
+        basePath="E:/projectdev/image/";
+        basePath=basePath.replace("/",seperator);
         return basePath;
     }
     public static String getShopImagePath(long shopId){
-        String imagePath="/upload/item/shop/"+shopId+"/";
-        return imagePath.replace("/",separator);
+        String imagePath="upload/item/shop/"+shopId+"/";
+        return imagePath.replace("/",seperator);
     }
 }
