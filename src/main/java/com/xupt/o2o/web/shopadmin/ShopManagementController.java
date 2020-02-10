@@ -2,9 +2,13 @@ package com.xupt.o2o.web.shopadmin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xupt.o2o.dto.ShopExecution;
+import com.xupt.o2o.entity.Area;
 import com.xupt.o2o.entity.PersonInfo;
 import com.xupt.o2o.entity.Shop;
+import com.xupt.o2o.entity.ShopCategory;
 import com.xupt.o2o.enums.ShopStateEnum;
+import com.xupt.o2o.service.AreaService;
+import com.xupt.o2o.service.ShopCategoryService;
 import com.xupt.o2o.service.ShopService;
 import com.xupt.o2o.util.HttpServletRequestUtil;
 import com.xupt.o2o.util.ImageUtil;
@@ -20,7 +24,9 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -35,6 +41,29 @@ import java.util.Map;
 public class ShopManagementController {
     @Autowired
     private ShopService shopService;
+    @Autowired
+    private ShopCategoryService shopCategoryService;
+    @Autowired
+    private AreaService areaService;
+
+    @RequestMapping(value = "/getshopinitinfo",method = RequestMethod.GET)
+    @ResponseBody
+    private Map<String,Object> getShopInitInfo(){
+        Map<String,Object> modelMap=new HashMap<String,Object>();
+        List<ShopCategory> shopCategoryList=new ArrayList<ShopCategory>();
+        List<Area>  areaList=new ArrayList<Area>();
+        try {
+            shopCategoryList=shopCategoryService.getShopCategoryList(new ShopCategory());
+            areaList=areaService.getAreaList();
+            modelMap.put("shopCategoryList",shopCategoryList);
+            modelMap.put("areaList",areaList);
+            modelMap.put("success",true);
+        }catch (Exception e){
+            modelMap.put("success",false);
+            modelMap.put("errMsg",e.getMessage());
+        }
+        return modelMap;
+    }
 
     @RequestMapping(value = "/registershop", method = RequestMethod.POST)
     @ResponseBody
