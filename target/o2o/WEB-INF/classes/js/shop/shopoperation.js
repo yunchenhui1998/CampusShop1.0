@@ -4,7 +4,6 @@
 $(function () {
     var initUrl = '/o2o_war_exploded/shopadmin/getshopinitinfo' ;
     var registerShopUrl='/o2o_war_exploded/shopadmin/registershop';
-    alert(initUrl);
     getShopInitInfo();
     function getShopInitInfo() {
         $.getJSON(initUrl,function (data){
@@ -41,12 +40,18 @@ $(function () {
             var formData=new FormData();
             formData.append('shopImg',shopImg);
             formData.append('shopStr',JSON.stringify(shop));
+            var verifyCodeActual=$('#j_kaptcha').val();
+            if(!verifyCodeActual){
+                $.toast('请输入验证码');
+                return;
+            }
+            formData.append('verifyCodeActual',verifyCodeActual);
             $.ajax({
                 url:registerShopUrl,
                 type:'POST',
                 data:formData,
                 contentType:false,
-                proceesData:false,
+                processData:false,
                 cache:false,
                 success:function(data) {
                     if(data.success){
@@ -54,6 +59,7 @@ $(function () {
                     }else{
                         $.toast('提交失败'+data.errMsg);
                     }
+                    $('#captcha_img').click();
                 }
             });
         });
