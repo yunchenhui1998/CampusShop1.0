@@ -75,4 +75,23 @@ public class ImageUtil {
                 .watermark(Positions.BOTTOM_LEFT, ImageIO.read(new File(basePath + "\\watermark.jpg")), 0.25f)
                 .outputQuality(0.8f).toFile("E:\\projectdev\\image\\xiaohuangrennew.jpg");
     }
+    /*
+     * @Author yunchenhui
+     * @Description //TODO storePath是文件的路径还是目录的路径
+     * @Date 17:01 2020/2/15
+     * @Param [storePath]
+     * @return void
+     **/
+    public static void deleteFileOrPath(String storePath){
+        File fileOrPath=new File(PathUtil.getImgBasePath()+storePath);
+        if(fileOrPath.exists()){
+            if(fileOrPath.isDirectory()){
+                File[] files=fileOrPath.listFiles();
+                for(int i=0;i<files.length;i++){
+                    files[i].delete();
+                }
+            }
+            fileOrPath.delete();
+        }
+    }
 }

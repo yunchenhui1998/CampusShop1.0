@@ -8,6 +8,7 @@ import com.xupt.o2o.entity.Shop;
 import com.xupt.o2o.entity.ShopCategory;
 import com.xupt.o2o.enums.ShopStateEnum;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -28,6 +29,17 @@ public class ShopServiceTest extends BaseTest {
     @Autowired
     private ShopService shopService;
     @Test
+    public void testModifyShop() throws RuntimeException,FileNotFoundException{
+        Shop shop=new Shop();
+        shop.setShopId(47L);
+        shop.setShopName("修改后的店铺名称");
+        File shopImg=new File("E:\\projectdev\\image\\yunchenhui.jpg");
+        InputStream is=new FileInputStream(shopImg);
+        ShopExecution shopExecution=shopService.modifyShop(shop,is,"yunchenhui.jpg");
+        System.out.println("新的图片地址:"+shopExecution.getShop().getShopImg());
+    }
+    @Test
+    @Ignore
     public void testAddShop() throws FileNotFoundException {
         Shop shop = new Shop();
         PersonInfo owner=new PersonInfo();

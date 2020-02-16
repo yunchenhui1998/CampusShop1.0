@@ -28,7 +28,7 @@ public class HttpServletRequestUtil {
         try{
             return Double.valueOf(request.getParameter(key));
         }catch (Exception e){
-            return -1d;
+            return -1;
         }
     }
     public static boolean getBoolean(HttpServletRequest request,String key){
